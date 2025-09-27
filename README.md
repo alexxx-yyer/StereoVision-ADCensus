@@ -30,6 +30,10 @@ mkdir build && cd build
 cmake .. && make
 ```
 
+### Branches
+- `master` - Original OpenCV 2.x version
+- `opencv4.x-linux` - **OpenCV 4.x compatible version (recommended)**
+
 Checkout the project in action or see other nice projects: [My YouTube Channel](https://www.youtube.com/user/dluensch/videos), [Robalab W-HS YouTube Channel](https://www.youtube.com/user/RoblabFhGe/videos)
 
 [![YouTube project video](http://img.youtube.com/vi/MZsSTpS-XGI/0.jpg)](http://www.youtube.com/watch?v=MZsSTpS-XGI)
