@@ -1,21 +1,72 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Build directories
+build/
+*/build/
+**/build/
 
-# Compiled Dynamic libraries
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# Compiled binaries
+*.exe
+*.out
+*.app
 *.so
 *.dylib
 *.dll
 
-# Compiled Static libraries
-*.lai
-*.la
+# Object files
+*.o
+*.obj
+*.lo
+*.slo
+*.ko
+
+# Libraries
 *.a
+*.la
 *.lib
 
-# Executables
-*.exe
-*.out
-*.app
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Qt generated files
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.moc
+*.qm
+
+# Backup files
+*.bak
+*.backup
+*.orig

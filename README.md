@@ -3,17 +3,44 @@ StereoVision-ADCensus
 This is a master student project realized at the robotics laboratory of the Westphalian University of Applied Science.
 With the programs in this repository you can calibrate single cameras, a stereo system, calculate disparity maps and evaluate your data. It's a all in one package for stereo vision! The software runs under windows and linux and is written in C++.
 
+## 🚀 OpenCV 4.x Compatibility Update
+
+**This fork has been updated to work with modern OpenCV 4.x versions!**
+
+The original project was designed for OpenCV 2.x, but this version includes comprehensive updates to ensure compatibility with OpenCV 4.x:
+
+- ✅ All deprecated `CV_` constants have been updated
+- ✅ Header includes modernized to use `opencv2/opencv.hpp`
+- ✅ CMakeLists.txt files updated to remove version restrictions
+- ✅ Qt4 upgraded to Qt5 for OpenCVBM module
+- ✅ All modules tested and verified to compile successfully
+
+### Quick Start
+```bash
+# Clone this repository
+git clone https://github.com/alexxx-yyer/StereoVision-ADCensus.git
+cd StereoVision-ADCensus
+
+# Checkout the OpenCV 4.x compatible branch
+git checkout opencv4.x-linux
+
+# Build any module (example: IntrinsicExtrinsicCalib)
+cd IntrinsicExtrinsicCalib
+mkdir build && cd build
+cmake .. && make
+```
+
 Checkout the project in action or see other nice projects: [My YouTube Channel](https://www.youtube.com/user/dluensch/videos), [Robalab W-HS YouTube Channel](https://www.youtube.com/user/RoblabFhGe/videos)
 
 [![YouTube project video](http://img.youtube.com/vi/MZsSTpS-XGI/0.jpg)](http://www.youtube.com/watch?v=MZsSTpS-XGI)
 
 Based on the following libraries:
-* OpenCV
+* OpenCV 4.x (updated from 2.x)
 * BOOST
 * libConfig
 * PCL
 * OpenMP
-* Qt 4.8.X
+* Qt 5.x (updated from 4.8.X)
 
 Projects in this package:
 * IntrinsicExtrinsicCalib
@@ -21,7 +48,51 @@ Projects in this package:
 * ADCensusBM 
 * PictureOverlay 
 * OpenCVBM 
-* evalDisp 
+* evalDisp
+
+## 📋 OpenCV 4.x Upgrade Details
+
+### What Changed
+This fork includes comprehensive updates to make the project compatible with OpenCV 4.x:
+
+#### 1. **Deprecated Constants Updated**
+- `CV_BGR2GRAY` → `COLOR_BGR2GRAY`
+- `CV_TERMCRIT_EPS` → `TermCriteria::EPS`
+- `CV_TERMCRIT_ITER` → `TermCriteria::MAX_ITER`
+- `CV_CALIB_*` → `CALIB_*`
+- `CV_L2` → `NORM_L2`
+- `CV_RGB()` → `Scalar()`
+- `CV_INTER_LINEAR` → `INTER_LINEAR`
+- `CV_LOAD_IMAGE_GRAYSCALE` → `IMREAD_GRAYSCALE`
+
+#### 2. **Header Includes Modernized**
+- Replaced multiple specific OpenCV headers with `#include <opencv2/opencv.hpp>`
+- This ensures compatibility with OpenCV 4.x module structure
+
+#### 3. **CMakeLists.txt Updates**
+- Removed OpenCV version restrictions (`find_package(OpenCV 2.4 REQUIRED)` → `find_package(OpenCV REQUIRED)`)
+- Updated Qt4 to Qt5 for OpenCVBM module
+
+#### 4. **Qt Compatibility**
+- Updated `Qt::WFlags` → `Qt::WindowFlags`
+- Changed `QtGui/QMainWindow` → `QtWidgets/QMainWindow`
+- Modernized Qt5 CMake configuration
+
+### System Requirements
+- **OpenCV 4.x** (tested with 4.6.0)
+- **Qt 5.x** (for OpenCVBM module)
+- **CMake 3.5+**
+- **C++11 compatible compiler**
+- **Linux/Windows** (tested on Ubuntu 24.04)
+
+### Build Status
+All modules have been tested and compile successfully:
+- ✅ IntrinsicExtrinsicCalib
+- ✅ ADCensusBM  
+- ✅ ImageRectify
+- ✅ evalDisp
+- ✅ PictureOverlay
+- ✅ OpenCVBM 
 
 # IntrinsicExtrinsicCalib
 With this program you can calculate the intrinsic and extrinsinc parameters of your cameras. The calibration requires several images with chessboard pattern in any size, e.g. a 8x6 (width x height) [pattern](./Documents/chessboards/Chessboard_A4_8x6_2.65cm.pdf). We used this [18x12](./Documents/chessboards/Chessboard_A0_18x12_5cm.pdf) (only the inner edges count) pattern on a A0 sheet in the project. Every calibration is based on about 20 images from different views, distances and angles. It is important that the pattern is visible on every section of the camera sensor! For every single camera and calibration step (intrinsic and extrinsic) you must take these images.
