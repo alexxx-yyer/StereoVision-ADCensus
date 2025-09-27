@@ -1,0 +1,3 @@
+/home/alex/code/StereoVision-ADCensus/evalDisp/build/CMakeFiles/evalDisp.dir
+/home/alex/code/StereoVision-ADCensus/evalDisp/build/CMakeFiles/edit_cache.dir
+/home/alex/code/StereoVision-ADCensus/evalDisp/build/CMakeFiles/rebuild_cache.dir

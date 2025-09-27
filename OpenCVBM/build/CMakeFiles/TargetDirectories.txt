@@ -1,0 +1,3 @@
+/home/alex/code/StereoVision-ADCensus/OpenCVBM/build/CMakeFiles/OpenCVBM.dir
+/home/alex/code/StereoVision-ADCensus/OpenCVBM/build/CMakeFiles/edit_cache.dir
+/home/alex/code/StereoVision-ADCensus/OpenCVBM/build/CMakeFiles/rebuild_cache.dir

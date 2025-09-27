@@ -46,7 +46,7 @@
 
 #include "ui_blockmatchingimage.h"
 
-#include <opencv2/core/core.hpp>
+#include <opencv2/opencv.hpp>
 #include <QDialog>
 
 class BlockmatchingImage : public QDialog

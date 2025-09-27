@@ -43,7 +43,7 @@
 
 #include "blockmatchingimage.h"
 
-#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/opencv.hpp>
 #include <iostream>
 
 BlockmatchingImage::BlockmatchingImage(QWidget *parent)
@@ -63,7 +63,7 @@ void BlockmatchingImage::updateImage(cv::Mat img)
     }
 
     cv::Mat colorImg;
-    cv::cvtColor(img, colorImg, CV_GRAY2RGB);
+    cv::cvtColor(img, colorImg, cv::COLOR_GRAY2RGB);
     QPixmap image = QPixmap::fromImage(QImage((unsigned char*) colorImg.data, colorImg.cols, colorImg.rows, colorImg.step, QImage::Format_RGB888));
 
     this->ui.image_field->setPixmap(image);

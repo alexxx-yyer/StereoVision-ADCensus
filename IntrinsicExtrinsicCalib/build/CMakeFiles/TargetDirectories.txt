@@ -1,0 +1,4 @@
+/home/alex/code/StereoVision-ADCensus/IntrinsicExtrinsicCalib/build/CMakeFiles/extrinsic.dir
+/home/alex/code/StereoVision-ADCensus/IntrinsicExtrinsicCalib/build/CMakeFiles/intrinsic.dir
+/home/alex/code/StereoVision-ADCensus/IntrinsicExtrinsicCalib/build/CMakeFiles/edit_cache.dir
+/home/alex/code/StereoVision-ADCensus/IntrinsicExtrinsicCalib/build/CMakeFiles/rebuild_cache.dir

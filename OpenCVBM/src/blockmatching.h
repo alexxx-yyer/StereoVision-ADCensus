@@ -44,8 +44,7 @@
 #ifndef BLOCKMATCHING_H
 #define BLOCKMATCHING_H
 
-#include <opencv2/calib3d/calib3d.hpp>
-#include <opencv2/core/core.hpp>
+#include <opencv2/opencv.hpp>
 
 using namespace cv;
 

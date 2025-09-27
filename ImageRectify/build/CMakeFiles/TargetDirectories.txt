@@ -1,0 +1,3 @@
+/home/alex/code/StereoVision-ADCensus/ImageRectify/build/CMakeFiles/ImageRectify.dir
+/home/alex/code/StereoVision-ADCensus/ImageRectify/build/CMakeFiles/edit_cache.dir
+/home/alex/code/StereoVision-ADCensus/ImageRectify/build/CMakeFiles/rebuild_cache.dir

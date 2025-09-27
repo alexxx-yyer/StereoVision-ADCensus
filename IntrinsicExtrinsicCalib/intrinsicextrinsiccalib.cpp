@@ -115,16 +115,16 @@ bool IntrinsicExtrinsicCalib::readMonoParams(string confPath, Size &boardSize, s
 
         if (!autoMode)
         {
-            flags = (((bool)cfg.lookup("FIX_PRINCIPAL_POINT")) ? CV_CALIB_FIX_PRINCIPAL_POINT : 0);
-            flags += (((bool)cfg.lookup("FIX_ASPECT_RATIO")) ? CV_CALIB_FIX_ASPECT_RATIO : 0);
-            flags += (((bool)cfg.lookup("ZERO_TANGENT_DIST")) ? CV_CALIB_ZERO_TANGENT_DIST : 0);
-            flags += (((bool)cfg.lookup("RATIONAL_MODEL")) ? CV_CALIB_RATIONAL_MODEL : 0);
-            flags += (((bool)cfg.lookup("FIX_K1")) ? CV_CALIB_FIX_K1 : 0);
-            flags += (((bool)cfg.lookup("FIX_K2")) ? CV_CALIB_FIX_K2 : 0);
-            flags += (((bool)cfg.lookup("FIX_K3")) ? CV_CALIB_FIX_K3 : 0);
-            flags += (((bool)cfg.lookup("FIX_K4")) ? CV_CALIB_FIX_K4 : 0);
-            flags += (((bool)cfg.lookup("FIX_K5")) ? CV_CALIB_FIX_K5 : 0);
-            flags += (((bool)cfg.lookup("FIX_K6")) ? CV_CALIB_FIX_K6 : 0);
+            flags = (((bool)cfg.lookup("FIX_PRINCIPAL_POINT")) ? CALIB_FIX_PRINCIPAL_POINT : 0);
+            flags += (((bool)cfg.lookup("FIX_ASPECT_RATIO")) ? CALIB_FIX_ASPECT_RATIO : 0);
+            flags += (((bool)cfg.lookup("ZERO_TANGENT_DIST")) ? CALIB_ZERO_TANGENT_DIST : 0);
+            flags += (((bool)cfg.lookup("RATIONAL_MODEL")) ? CALIB_RATIONAL_MODEL : 0);
+            flags += (((bool)cfg.lookup("FIX_K1")) ? CALIB_FIX_K1 : 0);
+            flags += (((bool)cfg.lookup("FIX_K2")) ? CALIB_FIX_K2 : 0);
+            flags += (((bool)cfg.lookup("FIX_K3")) ? CALIB_FIX_K3 : 0);
+            flags += (((bool)cfg.lookup("FIX_K4")) ? CALIB_FIX_K4 : 0);
+            flags += (((bool)cfg.lookup("FIX_K5")) ? CALIB_FIX_K5 : 0);
+            flags += (((bool)cfg.lookup("FIX_K6")) ? CALIB_FIX_K6 : 0);
         }
 
         readSuccess = true;
@@ -268,13 +268,13 @@ bool IntrinsicExtrinsicCalib::findCornersStereo(Size boardSize, Size subPixSize,
                 vector<Point2f> subPixCorners1(corners1);
                 vector<Point2f> subPixCorners2(corners2);
 
-                cvtColor(images[i * 2], viewGray1, CV_BGR2GRAY);
-                cvtColor(images[i * 2 + 1], viewGray2, CV_BGR2GRAY);
+                cvtColor(images[i * 2], viewGray1, COLOR_BGR2GRAY);
+                cvtColor(images[i * 2 + 1], viewGray2, COLOR_BGR2GRAY);
 
                 cornerSubPix(viewGray1, subPixCorners1, subPixSize,
-                             Size(-1,-1), TermCriteria( CV_TERMCRIT_EPS+CV_TERMCRIT_ITER, 30, 0.1 ));
+                             Size(-1,-1), TermCriteria( TermCriteria::EPS+TermCriteria::MAX_ITER, 30, 0.1 ));
                 cornerSubPix(viewGray2, subPixCorners2, subPixSize,
-                             Size(-1,-1), TermCriteria( CV_TERMCRIT_EPS+CV_TERMCRIT_ITER, 30, 0.1 ));
+                             Size(-1,-1), TermCriteria( TermCriteria::EPS+TermCriteria::MAX_ITER, 30, 0.1 ));
 
                 #pragma omp critical
                 {
@@ -448,10 +448,10 @@ bool IntrinsicExtrinsicCalib::findCornersMono(Size boardSize, Size subPixSize, v
         {
             vector<Point2f> subPixCorners(corners);
 
-            cvtColor(images[i], viewGray, CV_BGR2GRAY);
+            cvtColor(images[i], viewGray, COLOR_BGR2GRAY);
 
             cornerSubPix(viewGray, subPixCorners, subPixSize,
-                         Size(-1,-1), TermCriteria( CV_TERMCRIT_EPS+CV_TERMCRIT_ITER, 30, 0.1 ));
+                         Size(-1,-1), TermCriteria( TermCriteria::EPS+TermCriteria::MAX_ITER, 30, 0.1 ));
 
             #pragma omp critical
             {
@@ -494,7 +494,7 @@ double IntrinsicExtrinsicCalib::computeReprojectionErrors( const vector<vector<P
     {
         projectPoints( Mat(objectPoints[i]), rvecs[i], tvecs[i], cameraMatrix,
                        distCoeffs, imagePoints2);
-        err = norm(Mat(imagePoints[i]), Mat(imagePoints2), CV_L2);
+        err = norm(Mat(imagePoints[i]), Mat(imagePoints2), NORM_L2);
 
         int n = (int)objectPoints[i].size();
         perViewErrors[i] = (float) std::sqrt(err*err/n);

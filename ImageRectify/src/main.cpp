@@ -141,7 +141,7 @@ int main(int argc, char** argv)
             for(int k = 0; k < 2; k++)
             {
                 Mat img = undistortedImages[i*2+k], remapImg, rectImg;
-                remap(img, remapImg, rmap[k][0], rmap[k][1], CV_INTER_LINEAR);
+                remap(img, remapImg, rmap[k][0], rmap[k][1], INTER_LINEAR);
 
                 stringstream filename;
 

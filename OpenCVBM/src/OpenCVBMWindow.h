@@ -49,7 +49,7 @@
 #include "sgblockmatching.h"
 #include "ui_OpenCVBMWindow.h"
 
-#include <QtGui/QMainWindow>
+#include <QtWidgets/QMainWindow>
 #include <opencv2/opencv.hpp>
 
 class OpenCVBMWindow : public QMainWindow
@@ -104,7 +104,7 @@ public Q_SLOTS:
 
 public:
 
-	OpenCVBMWindow(QWidget *parent = 0, Qt::WFlags flags = 0);
+	OpenCVBMWindow(QWidget *parent = 0, Qt::WindowFlags flags = 0);
 
 	~OpenCVBMWindow();
 

@@ -189,7 +189,7 @@ int main(int argc, char** argv)
             for(int k = 0; k < 2; k++)
             {
                 Mat img = undistortedImages[i*2+k], rimg;
-                remap(img, rimg, rmap[k][0], rmap[k][1], CV_INTER_LINEAR);
+                remap(img, rimg, rmap[k][0], rmap[k][1], INTER_LINEAR);
 
                 stringstream filename;
 
@@ -198,7 +198,7 @@ int main(int argc, char** argv)
                 imwrite(filename.str(), rimg);
 
                 Mat canvasPart = !isVerticalStereo ? canvas(Rect(w*k, 0, w, h)) : canvas(Rect(0, h*k, w, h));
-                resize(rimg, canvasPart, canvasPart.size(), 0, 0, CV_INTER_AREA);
+                resize(rimg, canvasPart, canvasPart.size(), 0, 0, INTER_AREA);
 
                     Rect vroi(cvRound(validRoi[k].x*sf), cvRound(validRoi[k].y*sf),
                               cvRound(validRoi[k].width*sf), cvRound(validRoi[k].height*sf));
@@ -232,7 +232,7 @@ int main(int argc, char** argv)
             for(int k = 0; k < 2; k++)
             {
                 Mat img = undistortedImages[i*2+k], remapImg, rectImg;
-                remap(img, remapImg, rmap[k][0], rmap[k][1], CV_INTER_LINEAR);
+                remap(img, remapImg, rmap[k][0], rmap[k][1], INTER_LINEAR);
 
                 stringstream filename;
 

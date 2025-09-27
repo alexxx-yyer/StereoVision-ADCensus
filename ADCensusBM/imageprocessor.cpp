@@ -59,7 +59,7 @@ Mat ImageProcessor::stretchHistogram(Mat image)
     hist.resize(std::numeric_limits<uchar>::max() + 1);
 
 
-    cvtColor(image, output, CV_BGR2YCrCb); //change the color image from BGR to YCrCb format
+    cvtColor(image, output, COLOR_BGR2YCrCb); //change the color image from BGR to YCrCb format
     split(output, channels); //split the image into channels
 
     uchar min = std::numeric_limits<uchar>::max();
@@ -122,7 +122,7 @@ Mat ImageProcessor::stretchHistogram(Mat image)
     }
 
     merge(channels,output); //merge 3 channels including the modified 1st channel into one image
-    cvtColor(output, output, CV_YCrCb2BGR); //change the color image from YCrCb to BGR format (to display image properly)
+    cvtColor(output, output, COLOR_YCrCb2BGR); //change the color image from YCrCb to BGR format (to display image properly)
 
     return output;
 }

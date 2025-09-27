@@ -14,7 +14,7 @@ if(OPENMP_FOUND)
 endif()
 
 # Under Windows the system variable "OPENCV_ROOT" must be set to the location of the root directory of OpenCV.
-find_package(OpenCV 2.4 REQUIRED)
+find_package(OpenCV REQUIRED)
 SET(LIBS ${LIBS} ${OpenCV_LIBS})
 
 # Under Windows the system variable "BOOST_ROOT" must be set to the location of the root directory of Boost.

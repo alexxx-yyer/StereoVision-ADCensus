@@ -369,8 +369,8 @@ int main(int argc, char *argv[])
 
                 imageWMarker = (useImg)? images[camNo][capNo].clone(): disparitiesGray[camNo][capNo].clone();
 
-                line(imageWMarker, Point(posX - 4,posY), Point(posX + 4,posY), CV_RGB(0,255,0));
-                line(imageWMarker, Point(posX,posY - 4), Point(posX,posY + 4), CV_RGB(0,255,0));
+                line(imageWMarker, Point(posX - 4,posY), Point(posX + 4,posY), Scalar(0,255,0));
+                line(imageWMarker, Point(posX,posY - 4), Point(posX,posY + 4), Scalar(0,255,0));
 
                 float disp;
 

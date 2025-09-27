@@ -42,7 +42,7 @@
  * ------------------------------------------------------------------------- */
 
 #include "paramcombination.h"
-#include <opencv2/calib3d/calib3d.hpp>
+#include <opencv2/opencv.hpp>
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -59,27 +59,27 @@ ParamCombination::ParamCombination()
     this->paramEval[3] = 8;
     this->paramEval[4] = 16;
 
-    this->opencvParam[0] = CV_CALIB_FIX_PRINCIPAL_POINT;
-    this->opencvParam[1] = CV_CALIB_FIX_ASPECT_RATIO;
-    this->opencvParam[2] = CV_CALIB_ZERO_TANGENT_DIST;
-    this->opencvParam[3] = CV_CALIB_RATIONAL_MODEL;
-    this->opencvParam[4] = CV_CALIB_FIX_K1;
-    this->opencvParam[5] = CV_CALIB_FIX_K2;
-    this->opencvParam[6] = CV_CALIB_FIX_K3;
-    this->opencvParam[7] = CV_CALIB_FIX_K4;
-    this->opencvParam[8] = CV_CALIB_FIX_K5;
-    this->opencvParam[9] = CV_CALIB_FIX_K6;
+    this->opencvParam[0] = CALIB_FIX_PRINCIPAL_POINT;
+    this->opencvParam[1] = CALIB_FIX_ASPECT_RATIO;
+    this->opencvParam[2] = CALIB_ZERO_TANGENT_DIST;
+    this->opencvParam[3] = CALIB_RATIONAL_MODEL;
+    this->opencvParam[4] = CALIB_FIX_K1;
+    this->opencvParam[5] = CALIB_FIX_K2;
+    this->opencvParam[6] = CALIB_FIX_K3;
+    this->opencvParam[7] = CALIB_FIX_K4;
+    this->opencvParam[8] = CALIB_FIX_K5;
+    this->opencvParam[9] = CALIB_FIX_K6;
 
-    this->opencvParamNames[0] = "CV_CALIB_FIX_PRINCIPAL_POINT (FPP)";
-    this->opencvParamNames[1] = "CV_CALIB_FIX_ASPECT_RATIO (FAR)";
-    this->opencvParamNames[2] = "CV_CALIB_ZERO_TANGENT_DIST (ZTD)";
-    this->opencvParamNames[3] = "CV_CALIB_RATIONAL_MODEL (RM)";
-    this->opencvParamNames[4] = "CV_CALIB_FIX_K1 (FK1)";
-    this->opencvParamNames[5] = "CV_CALIB_FIX_K2 (FK2)";
-    this->opencvParamNames[6] = "CV_CALIB_FIX_K3 (FK3)";
-    this->opencvParamNames[7] = "CV_CALIB_FIX_K4 (FK4)";
-    this->opencvParamNames[8] = "CV_CALIB_FIX_K5 (FK5)";
-    this->opencvParamNames[9] = "CV_CALIB_FIX_K6 (FK6)";
+    this->opencvParamNames[0] = "CALIB_FIX_PRINCIPAL_POINT (FPP)";
+    this->opencvParamNames[1] = "CALIB_FIX_ASPECT_RATIO (FAR)";
+    this->opencvParamNames[2] = "CALIB_ZERO_TANGENT_DIST (ZTD)";
+    this->opencvParamNames[3] = "CALIB_RATIONAL_MODEL (RM)";
+    this->opencvParamNames[4] = "CALIB_FIX_K1 (FK1)";
+    this->opencvParamNames[5] = "CALIB_FIX_K2 (FK2)";
+    this->opencvParamNames[6] = "CALIB_FIX_K3 (FK3)";
+    this->opencvParamNames[7] = "CALIB_FIX_K4 (FK4)";
+    this->opencvParamNames[8] = "CALIB_FIX_K5 (FK5)";
+    this->opencvParamNames[9] = "CALIB_FIX_K6 (FK6)";
 }
 
 void ParamCombination::createConfig(string imagesXml, string savePath,

@@ -5,7 +5,7 @@ SET(CMAKE_BUILD_TYPE RelWithDebInfo)
 #add cmake script files
 SET(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_work")
 
-FIND_PACKAGE(OpenCV 2.4 REQUIRED)
+FIND_PACKAGE(OpenCV REQUIRED)
 SET(LIBS ${LIBS} ${OpenCV_LIBS})
 
 # Under Windows the system variable "BOOST_ROOT" must be set to the location of the root directory of Boost.

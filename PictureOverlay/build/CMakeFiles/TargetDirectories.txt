@@ -1,0 +1,3 @@
+/home/alex/code/StereoVision-ADCensus/PictureOverlay/build/CMakeFiles/PictureOverlay.dir
+/home/alex/code/StereoVision-ADCensus/PictureOverlay/build/CMakeFiles/edit_cache.dir
+/home/alex/code/StereoVision-ADCensus/PictureOverlay/build/CMakeFiles/rebuild_cache.dir

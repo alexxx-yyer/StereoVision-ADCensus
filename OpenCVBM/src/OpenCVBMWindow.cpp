@@ -51,7 +51,7 @@
 using namespace cv;
 using namespace std;
 
-OpenCVBMWindow::OpenCVBMWindow(QWidget *parent, Qt::WFlags flags)
+OpenCVBMWindow::OpenCVBMWindow(QWidget *parent, Qt::WindowFlags flags)
     : QMainWindow(parent, flags)
 {
     this->ui.setupUi(this);
